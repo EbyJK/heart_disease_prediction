@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardio Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cardio Disease Detection</h1>
+        <form method="POST">
+            <label for="age">Age (years):</label>
+            <input type="number" name="age" required>
+
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </select>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" step="0.1" name="height" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" step="0.1" name="weight" required>
+
+            <label for="ap_hi">Systolic Blood Pressure:</label>
+            <input type="number" name="ap_hi" required>
+
+            <label for="ap_lo">Diastolic Blood Pressure:</label>
+            <input type="number" name="ap_lo" required>
+
+            <label for="cholesterol">Cholesterol Level:</label>
+            <select name="cholesterol" required>
+                <option value="1">Normal</option>
+                <option value="2">Above Normal</option>
+                <option value="3">Well Above Normal</option>
+            </select>
+
+            <label for="gluc">Glucose Level:</label>
+            <select name="gluc" required>
+                <option value="1">Normal</option>
+                <option value="2">Above Normal</option>
+                <option value="3">Well Above Normal</option>
+            </select>
+
+            <label for="smoke">Do you smoke?:</label>
+            <select name="smoke" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="alco">Do you consume alcohol?:</label>
+            <select name="alco" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="active">Are you physically active?:</label>
+            <select name="active" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>

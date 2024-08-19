@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Results</h1>
+        <ul>
+            {% for model, result in results.items() %}
+            <li>{{ model }}: {{ result.result }} (Probability: {{ result.probability | round(2) }})</li>
+            {% endfor %}
+        </ul>
+
+        <div class="graph-container">
+            <h3>ROC Curve</h3>
+            <img src="{{ url_for('static', filename='roc_curve.png') }}" alt="ROC Curve">
+        </div>
+
+        <div class="graph-container">
+            <h3>Confusion Matrix</h3>
+            <img src="{{ url_for('static', filename='confusion_matrix.png') }}" alt="Confusion Matrix">
+        </div>
+
+        <a href="{{ url_for('index') }}" class="back-link">Back to Prediction</a>
+    </div>
+</body>
+</html>
