@@ -28,7 +28,7 @@ import os
 app = Flask(__name__)
 
 # Load models
-model_names = ['support_vector_machine', 'k-nearest_neighbors', 'decision_tree', 'logistic_regression', 'random_forest']
+model_names = [ 'k-nearest_neighbors', 'decision_tree', 'logistic_regression']
 models = {name: pickle.load(open(f'models/{name}_model.pkl', 'rb')) for name in model_names}
 
 # Load and scale data
